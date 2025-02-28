@@ -1,0 +1,43 @@
+
+USO DE LOGHANDLER 
+
+1) Tiene un parametro para colocar el nivel de logging
+   /**
+    * Sets a new level to a logger
+    * @param logName Name of the logger. If not registered, it does nothing
+    * @param level New logger's level. In uppercase, according to
+    *            SEVERE (highest value)
+    *            WARNING
+    *            INFO
+    *            CONFIG
+    *            FINE
+    *            FINER
+    *            FINEST (lowest value)
+    */
+   public static void setLevel( String logName, String level);
+
+2) Coloca la fecha YYYY-MM-DD como sufijo del nombre del logger para conformar el nombre de archivo.
+3) Mensajes con nivel >= Level.INFO se graban en el log Y SE DESPLIEGAN EN PANTALLA. Aplica para niveles INFO, WARNING, SEVERE.
+4) Permite configuar múltiples loggers
+
+   /**
+    * Configures a Logger and its associated StreamHandler
+    * @param logName   Prefix of the logger's name. Name of log file will be "PrefixAAAA-MM-DD.log"
+    * @param xmlFormat true (=LogHandler.XML): use a xml formatter/ false(=LogHandler.TEXT): use simple formatter
+    * @param level     Logging level. Messages below this level are ignored
+    */
+   public static Object[] configLog( String logName, boolean xmlFormat, Level level);
+
+4) Usar los métodos getLoggerInstance() y getHandlerInstance() para obtener el Default Log, y Default Handler
+5) Usa UTF-8 como encoding 
+
+Uso de los niveles
+
+1) Para Trace (entré a metodo, salí de metodo) usar Level.FINEST.
+2) Para debugging usar Level.FINER,
+3) Para auditoria usar Level.FINE.
+4) Para mensajes de resultado de programa usar  Level.INFO.
+5) Para errores corregibles usar  Level.WARNING
+6) Para errores graves o fatales usar Level.SEVERE.
+
+
