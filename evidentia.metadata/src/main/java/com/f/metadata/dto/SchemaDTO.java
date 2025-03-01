@@ -1,12 +1,18 @@
 package com.f.metadata.dto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
 
 /**
  * Represents a schema persistent record
  */
 @Entity
+@Table(name = "schema", indexes = {
+	    @Index(name = "idx_schema_name", columnList = "name")
+	})
 public class SchemaDTO {
 	
 	/*
@@ -17,8 +23,14 @@ public class SchemaDTO {
 
 	@Id
 	private Long        id;
+	
+	@Column(name = "name", nullable = false, length =40)
 	private String      name;
+	
+	@Column(name = "fieldsXML", nullable = false, length =1000)
 	private String      fieldsXML;
+	
+	public SchemaDTO() { }
 	
 	public SchemaDTO ( Long id, String name, String fieldsXML) {
 		if( id == null || fieldsXML == null || fieldsXML.trim().length() == 0) {

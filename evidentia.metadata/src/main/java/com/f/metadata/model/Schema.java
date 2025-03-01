@@ -20,7 +20,7 @@ public class Schema  implements SchemaImporter, Comparable<Schema>{
 	 */
 	private Long        id;
 	private String      name;
-	private Set<Field>  fields;
+	private Set<Field>  fields; 
 
 
 	/**
@@ -79,6 +79,15 @@ public class Schema  implements SchemaImporter, Comparable<Schema>{
 	public void  setName( String name) {
 		this.name = name;
 	}
+	
+	
+	/**
+	 * Returns the schema identifier
+	 * @return Long schema identifier
+	 */
+	public Long getId() {
+		return this.id;
+	}
 
 
 	/**
@@ -113,7 +122,7 @@ public class Schema  implements SchemaImporter, Comparable<Schema>{
 	 * @return int the schema size
 	 */
 	public int size() {
-		return fields.size();
+    	return fields.size();
 	}
 	
 	

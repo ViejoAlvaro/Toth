@@ -62,6 +62,13 @@ public class SchemaTest {
 		assertFalse ( schema1.equals(theSchema));
 		assertEquals( schema1, schema1);
 	}
+	
+	@Test
+	public void getIdTest() {
+		Identity.setId(100L);
+		Schema schema10 = new Schema("SCHEMA10", fields);
+		assertEquals( 101L, schema10.getId());
+	}
 
 	@Test
 	public void getNameTest() {

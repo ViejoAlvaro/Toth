@@ -5,9 +5,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ApplicationTests {
-
+	
+	// The SchemaService is tested in the Junit class   SchemaServiceTest.java
+	// Note the use of the  @SpringBootTest   annotation
+	
 	@Test
-	void contextLoads() {
+	public void contextLoad() {
 	}
 
 }
