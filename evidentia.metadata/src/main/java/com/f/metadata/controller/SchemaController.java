@@ -11,11 +11,17 @@ import com.f.metadata.model.Schema;
 import com.f.metadata.service.SchemaService;
 
 @RestController
-@RequestMapping("/api/schemas")
+@RequestMapping("/schemas")
 public class SchemaController {
 
-    @Autowired
+	@Autowired
     private SchemaService schemaService;
+
+/*    @Autowired
+    public SchemaController(SchemaService schemaService) {
+        this.schemaService = schemaService;
+    }
+*/
 
     @GetMapping("/{id}")
     public ResponseEntity<Schema> getSchemaById(@PathVariable Long id) {

@@ -25,7 +25,7 @@ public class SchemaService {
 
     @PostConstruct
     public void init() {
-     System.out.println("schemaRepository == null?["+ (schemaRepository == null)+ "]");
+     System.out.println("))) in SchemaService.init()");
     }
     
  
